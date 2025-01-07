@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Need:
+// Menu to display options
+// Something to take user input for menu and answers, and then execute the correct code for response (Game Handler?)
+// Question generator
