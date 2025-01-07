@@ -1,11 +1,11 @@
+using MathConsoleGame.Globals;
 namespace MathConsoleGame.Game;
 
-public class MenuDisplay
+public static class MenuDisplay
 {
-
-    public void PrintMenuOptions()
+    public static void PrintMenuOptions()
     {
-        foreach (var keyValuePair in _menuOptions)
+        foreach (var keyValuePair in Mappings.MenuMap)
         {
             Console.WriteLine($"{keyValuePair.Key}. {keyValuePair.Value}");
         }
