@@ -5,3 +5,7 @@
 // Question generator
 
 MenuDisplay.PrintMenuOptions();
+UserResponse userResponse = new();
+
+userResponse.GetMenuSelection();
+// Get user response
