@@ -18,7 +18,5 @@ public static class Mappings
       {4, MenuOption.Division},
       {5, MenuOption.GameHistory},
     };
-
-
 }
 
