@@ -5,14 +5,18 @@ using MathConsoleGame.Interfaces;
 
 public class QuestionAnswerHelper
 {
-    private IArithmatic Instance;
     public QuestionAnswerHelper(Mappings.MenuOption selection)
     {
-
+        QuestionAnswerInstance = InstanceMap[selection];
     }
 
-    public Dictionary<Mappings.MenuOption, Addition> InstanceMap = new()
+    public IArithmatic QuestionAnswerInstance { get; set; }
+
+    private Dictionary<Mappings.MenuOption, IArithmatic> InstanceMap = new()
     {
-      {Mappings.MenuOption.Addition, new Addition()}
+      {Mappings.MenuOption.Addition, new Addition()},
+      {Mappings.MenuOption.Subtraction, new Subtraction()},
+      {Mappings.MenuOption.Multiplication, new Multiplication()},
+      {Mappings.MenuOption.Division, new Division()}
     };
 }

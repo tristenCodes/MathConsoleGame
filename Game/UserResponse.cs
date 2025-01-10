@@ -20,7 +20,8 @@ public class UserResponse
         var selectedMenuOption = Mappings.MenuMap[parsedResult];
 
         // get question and answer, 
-        MenuDisplay.ShowUserQuestion("HOOPLAH");
+        QuestionAnswerHelper helper = new QuestionAnswerHelper(selectedMenuOption);
+        MenuDisplay.ShowUserQuestion(helper.QuestionAnswerInstance.Question);
 
         // ask question, 
 
