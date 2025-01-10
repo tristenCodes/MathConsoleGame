@@ -1,6 +1,7 @@
 namespace MathConsoleGame.Game.Arithmatic;
+using MathConsoleGame.Interfaces;
 
-public class Division : ArithmaticBase
+public class Division : ArithmaticBase, IArithmatic
 {
     public override void QuestionGenerator()
     {

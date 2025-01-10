@@ -11,4 +11,9 @@ public static class MenuDisplay
         }
     }
 
+    public static void ShowUserQuestion(string question)
+    {
+        Console.WriteLine($"Question: {question}");
+    }
+
 }

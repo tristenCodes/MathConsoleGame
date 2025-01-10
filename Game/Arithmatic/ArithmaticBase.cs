@@ -14,15 +14,12 @@ public abstract class ArithmaticBase : IArithmatic
 
     public virtual void QuestionGenerator()
     {
-        // generate two numbers
         var a = _rand.Next(1, 100);
         var b = _rand.Next(1, 100);
 
-        // create a question string out of the numbers
         symbol = GetSymbolFromQuestionType(_questionType);
         Question = $"{a} {symbol} {b}";
 
-        // set them as the answer
         Answer = PerformOperation(symbol, a, b);
     }
 

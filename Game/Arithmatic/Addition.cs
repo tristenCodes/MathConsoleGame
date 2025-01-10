@@ -1,6 +1,7 @@
 namespace MathConsoleGame.Game.Arithmatic;
+using MathConsoleGame.Interfaces;
 
-public class Addition
+public class Addition : ArithmaticBase, IArithmatic
 {
 
 }

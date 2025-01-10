@@ -17,11 +17,19 @@ public class UserResponse
             Console.WriteLine("Invalid selection. Your selection may be out of bounds.");
         }
 
+        var selectedMenuOption = Mappings.MenuMap[parsedResult];
 
-        // if valid response, process with question generator to get question and answer, ask them for answer
+        // get question and answer, 
+        MenuDisplay.ShowUserQuestion("HOOPLAH");
+
+        // ask question, 
+
+        // and judge answer
+
+        // mark as win or loss
     }
 
-    public void GetAnswer()
+    public void GetAnswerResponse()
     {
         string? response = Console.ReadLine();
     }

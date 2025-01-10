@@ -2,8 +2,5 @@
 
 UserResponse userResponse = new();
 
-
-
-
 MenuDisplay.PrintMenuOptions();
 userResponse.GetMenuSelection();
