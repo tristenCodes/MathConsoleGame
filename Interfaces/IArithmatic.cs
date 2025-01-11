@@ -2,7 +2,7 @@ namespace MathConsoleGame.Interfaces;
 
 public interface IArithmatic
 {
-    public void QuestionGenerator();
+    public void GenerateQuestionAnswer();
     string Question
     {
         get; set;

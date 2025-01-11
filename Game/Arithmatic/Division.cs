@@ -3,7 +3,7 @@ using MathConsoleGame.Interfaces;
 
 public class Division : ArithmaticBase, IArithmatic
 {
-    public override void QuestionGenerator()
+    public override void GenerateQuestionAnswer()
     {
         // how can I make sure that a / b == an integer?
         // take a number and multiply it, then set var a, b, and answer with that. 

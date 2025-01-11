@@ -5,19 +5,21 @@ using MathConsoleGame.Globals;
 
 public abstract class ArithmaticBase : IArithmatic
 {
-    private protected Random _rand = new Random();
-    private Mappings.MenuOption _questionType;
     private protected char symbol;
+    private protected Random _rand = new Random();
+
 
     public string Question { get; set; } = "";
     public int Answer { get; set; }
+    public virtual Mappings.MenuOption QuestionType {get; set;}
 
-    public virtual void QuestionGenerator()
+
+    public virtual void GenerateQuestionAnswer()
     {
         var a = _rand.Next(1, 100);
         var b = _rand.Next(1, 100);
 
-        symbol = GetSymbolFromQuestionType(_questionType);
+        symbol = GetSymbolFromQuestionType(QuestionType);
         Question = $"{a} {symbol} {b}";
 
         Answer = PerformOperation(symbol, a, b);

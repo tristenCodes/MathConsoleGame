@@ -23,6 +23,9 @@ public class UserResponse
         QuestionAnswerHelper helper = new QuestionAnswerHelper(selectedMenuOption);
         MenuDisplay.ShowUserQuestion(helper.QuestionAnswerInstance.Question);
 
+        Console.WriteLine(helper.QuestionAnswerInstance.Question);
+        Console.WriteLine(helper.QuestionAnswerInstance.Answer);
+
         // ask question, 
 
         // and judge answer
