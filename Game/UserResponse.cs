@@ -1,9 +1,9 @@
 namespace MathConsoleGame.Game;
 using MathConsoleGame.Globals;
 
-public class UserResponse
+public static class UserResponse
 {
-    public void GetMenuSelection()
+    public static Mappings.MenuOption GetMenuSelection()
     {
         string? response = Console.ReadLine();
 
@@ -18,23 +18,25 @@ public class UserResponse
         }
 
         var selectedMenuOption = Mappings.MenuMap[parsedResult];
-
-        // get question and answer, 
-        QuestionAnswerHelper helper = new QuestionAnswerHelper(selectedMenuOption);
-        MenuDisplay.ShowUserQuestion(helper.QuestionAnswerInstance.Question);
-
-        Console.WriteLine(helper.QuestionAnswerInstance.Question);
-        Console.WriteLine(helper.QuestionAnswerInstance.Answer);
-
-        // ask question, 
-
-        // and judge answer
-
-        // mark as win or loss
+        return selectedMenuOption;
     }
 
-    public void GetAnswerResponse()
+    public static int GetUserAnswer()
     {
-        string? response = Console.ReadLine();
+        bool isParsable = false;
+        int answer = 0;
+
+        while (!isParsable)
+        {
+            string? response = Console.ReadLine();
+
+            isParsable = Int32.TryParse(response, out int parsedResult);
+
+            if (isParsable) answer = parsedResult;
+            else Console.WriteLine("Invalid entry. Remember, it must be an integer");
+        }
+
+        return answer;
+
     }
 }

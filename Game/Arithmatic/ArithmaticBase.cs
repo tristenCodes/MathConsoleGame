@@ -25,7 +25,7 @@ public abstract class ArithmaticBase : IArithmatic
         Answer = PerformOperation(symbol, a, b);
     }
 
-    private char GetSymbolFromQuestionType(Mappings.MenuOption questionType)
+    private protected char GetSymbolFromQuestionType(Mappings.MenuOption questionType)
     {
         switch (questionType)
         {

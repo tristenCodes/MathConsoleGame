@@ -1,6 +1,5 @@
-﻿using MathConsoleGame.Game;
+﻿while (true)
+{
 
-UserResponse userResponse = new();
-
-MenuDisplay.PrintMenuOptions();
-userResponse.GetMenuSelection();
+    GameManager.Round();
+}

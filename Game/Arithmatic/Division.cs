@@ -26,6 +26,7 @@ public class Division : ArithmaticBase, IArithmatic
         var b = secondTempNum;
         var result = firstTempNum;
 
+        symbol = GetSymbolFromQuestionType(QuestionType);
         Question = $"{a} {symbol} {b}";
         Answer = PerformOperation(symbol, a, b);
     }
