@@ -1,8 +1,17 @@
 namespace MathConsoleGame.Game.Arithmatic;
+
 using MathConsoleGame.Interfaces;
+using MathConsoleGame.Globals;
 
 public class Division : ArithmaticBase, IArithmatic
 {
+
+    public Division()
+    {
+        this.QuestionType = Mappings.MenuOption.Division;
+        this.GenerateQuestionAnswer();
+    }
+
     public override void GenerateQuestionAnswer()
     {
         // how can I make sure that a / b == an integer?
@@ -19,5 +28,11 @@ public class Division : ArithmaticBase, IArithmatic
 
         Question = $"{a} {symbol} {b}";
         Answer = PerformOperation(symbol, a, b);
+    }
+
+    public override Mappings.MenuOption QuestionType
+    {
+        get { return base.QuestionType; }
+        set { base.QuestionType = value; }
     }
 }
