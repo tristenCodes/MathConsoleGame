@@ -5,18 +5,21 @@ using MathConsoleGame.Interfaces;
 
 public class QuestionAnswerHelper
 {
+    public IArithmatic QuestionAnswerInstance { get; set; }
     public QuestionAnswerHelper(Mappings.MenuOption selection)
     {
-        QuestionAnswerInstance = InstanceMap[selection];
+        QuestionAnswerInstance = CreateInstance(selection);
     }
 
-    public IArithmatic QuestionAnswerInstance { get; set; }
-
-    private Dictionary<Mappings.MenuOption, IArithmatic> InstanceMap = new()
+    private IArithmatic CreateInstance(Mappings.MenuOption selection)
     {
-      {Mappings.MenuOption.Addition, new Addition()},
-      {Mappings.MenuOption.Subtraction, new Subtraction()},
-      {Mappings.MenuOption.Multiplication, new Multiplication()},
-      {Mappings.MenuOption.Division, new Division()}
-    };
+        return selection switch
+        {
+            Mappings.MenuOption.Addition => new Addition(),
+            Mappings.MenuOption.Multiplication => new Multiplication(),
+            Mappings.MenuOption.Division => new Division(),
+            Mappings.MenuOption.Subtraction => new Subtraction(),
+            _ => throw new ArgumentException("Invalid selection")
+        };
+    }
 }
